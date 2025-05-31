@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recomendador de Rutas Turísticas</title>
+</head>
+<body>
+    <h1>Buscar rutas recomendadas</h1>
+    <form action="/procesar" method="POST">
+        <label>Latitud de origen:</label>
+        <input type="text" name="lat" required><br>
+
+        <label>Longitud de origen:</label>
+        <input type="text" name="lon" required><br>
+
+        <label for="presupuesto">Presupuesto diario (Q):</label>
+        <input type="number" name="presupuesto" required><br>
+
+        <button type="submit">Buscar</button>
+    </form>
+    <form action="/cargar_csv" method="post" enctype="multipart/form-data">
+        <label>Subir archivo CSV:</label>
+        <input type="file" name="archivo" accept=".csv" required>
+        <button type="submit">Cargar Archivo</button>
+    </form>
+
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+
+    <h2>Agregar manualmente</h2>
+    <form action="/agregar_manual" method="POST">
+        <label for="tipo">Tipo:</label>
+        <select name="tipo">
+            <option value="hospedaje">Hospedaje</option>
+            <option value="turistico">Lugar Turístico</option>
+        </select><br>
+
+        <label for="id">ID:</label>
+        <input type="number" name="id" required><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="lat">Latitud:</label>
+        <input type="text" name="lat" required><br>
+
+        <label for="lon">Longitud:</label>
+        <input type="text" name="lon" required><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" step="0.01" name="precio" required><br>
+
+        <label for="calificacion">Calificación:</label>
+        <input type="number" step="0.1" name="calificacion" required><br>
+
+        <label for="estadia">Estadía (horas):</label>
+        <input type="number" step="0.1" name="estadia" required><br>
+
+        <label for="comentarios">Comentarios:</label>
+        <input type="text" name="comentarios"><br>
+
+        <button type="submit">Agregar</button>
+    </form>
+
+    {% if ruta_generada %}
+    <h2>Ruta recomendada</h2>
+    <ul>
+        {% for lugar in ruta %}
+        <li>
+            <strong>{{ lugar.nombre }}</strong><br>
+            Calificación: {{ lugar.calificacion }}<br>
+            Precio: Q{{ lugar.precio }}<br>
+            Tiempo estimado: {{ lugar.tiempo_estadia }} horas
+            {% if not loop.first %}
+            <br><em>Tiempo desde el lugar anterior: {{ tiempos_traslado[loop.index0 - 1] | round(2) }} horas</em>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('static', filename='ruta_recomendada.csv') }}" download class="btn btn-success">
+        Descargar ruta en CSV
+    </a>
+
+    <iframe src="{{ url_for('static', filename='ruta_recomendada.html') }}" width="100%" height="500"></iframe>
+    {% endif %}
+</body>
+</html>

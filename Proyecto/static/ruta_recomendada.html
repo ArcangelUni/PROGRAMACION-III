@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_795fff5b4211946666fc436c7119fd1c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_795fff5b4211946666fc436c7119fd1c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_795fff5b4211946666fc436c7119fd1c = L.map(
+                "map_795fff5b4211946666fc436c7119fd1c",
+                {
+                    center: [14.6349, -90.5069],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6a551e8d579891427fbccb26b7d663b9 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+    
+            var marker_e1cc1daa757d0c63f0d499544131831a = L.marker(
+                [14.6349, -90.5069],
+                {}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+    
+            var icon_8430da505281dece86873aef421d5add = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e1cc1daa757d0c63f0d499544131831a.setIcon(icon_8430da505281dece86873aef421d5add);
+        
+    
+        var popup_c66496b6a68fbe66250502f5ba2632df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0044122030da68ccb88076057a97b31 = $(`<div id="html_c0044122030da68ccb88076057a97b31" style="width: 100.0%; height: 100.0%;">Origen</div>`)[0];
+                popup_c66496b6a68fbe66250502f5ba2632df.setContent(html_c0044122030da68ccb88076057a97b31);
+            
+        
+
+        marker_e1cc1daa757d0c63f0d499544131831a.bindPopup(popup_c66496b6a68fbe66250502f5ba2632df)
+        ;
+
+        
+    
+    
+            var marker_4ad1c9b14aa4a7096dfbedab9a7dcbf3 = L.marker(
+                [14.5566, -90.7333],
+                {}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+    
+            var icon_c0887bcf856303edbbf8f338463b2a5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4ad1c9b14aa4a7096dfbedab9a7dcbf3.setIcon(icon_c0887bcf856303edbbf8f338463b2a5c);
+        
+    
+        var popup_217f6707e5e19b8d975b20f1a1c27240 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7078b3316545893aa5872cebf660febc = $(`<div id="html_7078b3316545893aa5872cebf660febc" style="width: 100.0%; height: 100.0%;">Antigua Guatemala Calificación: 4.9 Precio: Q0.0</div>`)[0];
+                popup_217f6707e5e19b8d975b20f1a1c27240.setContent(html_7078b3316545893aa5872cebf660febc);
+            
+        
+
+        marker_4ad1c9b14aa4a7096dfbedab9a7dcbf3.bindPopup(popup_217f6707e5e19b8d975b20f1a1c27240)
+        ;
+
+        
+    
+    
+            var marker_c6b1fb9260d1a32555780d5a694c16a1 = L.marker(
+                [13.9333, -90.8],
+                {}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+    
+            var icon_e6b0af54209c2c8b6ba4dd776e954ee2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c6b1fb9260d1a32555780d5a694c16a1.setIcon(icon_e6b0af54209c2c8b6ba4dd776e954ee2);
+        
+    
+        var popup_667949b58405e55f4da2e6888891ff7f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc73be3ce5498b6267a0cc80c25f3b14 = $(`<div id="html_dc73be3ce5498b6267a0cc80c25f3b14" style="width: 100.0%; height: 100.0%;">El Paredon Calificación: 4.3 Precio: Q0.0</div>`)[0];
+                popup_667949b58405e55f4da2e6888891ff7f.setContent(html_dc73be3ce5498b6267a0cc80c25f3b14);
+            
+        
+
+        marker_c6b1fb9260d1a32555780d5a694c16a1.bindPopup(popup_667949b58405e55f4da2e6888891ff7f)
+        ;
+
+        
+    
+    
+            var marker_f0b967774e81b630de2c22d89650b9bf = L.marker(
+                [15.8, -90.35],
+                {}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+    
+            var icon_4838a30702659d364758c38424415149 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f0b967774e81b630de2c22d89650b9bf.setIcon(icon_4838a30702659d364758c38424415149);
+        
+    
+        var popup_746397ef494b2759107590b32d14e8a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3a4c8b9a89e0394ed97dd270ba030ec = $(`<div id="html_f3a4c8b9a89e0394ed97dd270ba030ec" style="width: 100.0%; height: 100.0%;">Candelaria Caves Calificación: 4.4 Precio: Q0.0</div>`)[0];
+                popup_746397ef494b2759107590b32d14e8a5.setContent(html_f3a4c8b9a89e0394ed97dd270ba030ec);
+            
+        
+
+        marker_f0b967774e81b630de2c22d89650b9bf.bindPopup(popup_746397ef494b2759107590b32d14e8a5)
+        ;
+
+        
+    
+    
+            var marker_634b2e4f248a62082a156bc612adb94c = L.marker(
+                [15.5, -91.6],
+                {}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+    
+            var icon_7942acc941196607698a146d94364eec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_634b2e4f248a62082a156bc612adb94c.setIcon(icon_7942acc941196607698a146d94364eec);
+        
+    
+        var popup_57ec725d7d15d54b98dcb6d46e14a43f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_baa4f21932cc660192a255a7a66131e4 = $(`<div id="html_baa4f21932cc660192a255a7a66131e4" style="width: 100.0%; height: 100.0%;">Todos Santos Cuchumatán Calificación: 4.2 Precio: Q0.0</div>`)[0];
+                popup_57ec725d7d15d54b98dcb6d46e14a43f.setContent(html_baa4f21932cc660192a255a7a66131e4);
+            
+        
+
+        marker_634b2e4f248a62082a156bc612adb94c.bindPopup(popup_57ec725d7d15d54b98dcb6d46e14a43f)
+        ;
+
+        
+    
+    
+            var marker_0fa61cc7e66a14fc25e7df47fbf357d6 = L.marker(
+                [15.6667, -89.0],
+                {}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+    
+            var icon_ccb11915cbe0fd2c87de123d9dcb4b45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0fa61cc7e66a14fc25e7df47fbf357d6.setIcon(icon_ccb11915cbe0fd2c87de123d9dcb4b45);
+        
+    
+        var popup_0276e2ca87448fa64d2224159e093e12 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f88fc2264a72c10bda730d01d5fa823 = $(`<div id="html_7f88fc2264a72c10bda730d01d5fa823" style="width: 100.0%; height: 100.0%;">Rio Dulce Calificación: 4.7 Precio: Q0.0</div>`)[0];
+                popup_0276e2ca87448fa64d2224159e093e12.setContent(html_7f88fc2264a72c10bda730d01d5fa823);
+            
+        
+
+        marker_0fa61cc7e66a14fc25e7df47fbf357d6.bindPopup(popup_0276e2ca87448fa64d2224159e093e12)
+        ;
+
+        
+    
+    
+            var poly_line_a3950231c19415e8b9ccd8b966ce7475 = L.polyline(
+                [[14.6349, -90.5069], [14.5566, -90.7333], [13.9333, -90.8], [15.8, -90.35], [15.5, -91.6], [15.6667, -89.0]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_795fff5b4211946666fc436c7119fd1c);
+        
+</script>
+</html>

@@ -6,8 +6,8 @@ import csv
 
 class NodoB:
     def __init__(self, es_hoja=True):
-        self.claves = []    # Claves almacenadas en el nodo
-        self.hijos = []     # Referencias a hijos (si no es hoja)
+        self.claves = []
+        self.hijos = []
         self.es_hoja = es_hoja
 
 class Hospedaje:
@@ -54,9 +54,6 @@ class LugarTuristico:
         return (f" {self.id} |{self.nombre} ({self.tipo})\n"
                 f"{self.ubicacion} | Q {self.precio} | ⭐ {self.calificacion}/5\n"
                 f"{self.comentarios}")
-
-
-# Árbol B genérico
 class ArbolB:
     def __init__(self, G):
         self.raiz = NodoB(True)
@@ -98,7 +95,7 @@ class ArbolB:
         nodo_lleno = padre.hijos[i]
         nuevo_nodo = NodoB(nodo_lleno.es_hoja)
 
-        medio = G // 2  # Promover la clave central
+        medio = G // 2
         clave_medio = nodo_lleno.claves[medio]
 
         nuevo_nodo.claves = nodo_lleno.claves[medio + 1:]
@@ -159,7 +156,6 @@ def cargar_datos_desde_csv(ruta):
                 print(f"Error de conversión: {e}")
     return arbol_hospedajes, arbol_turisticos
 
-# Clase para nodos del grafo (lugares turísticos)
 class Lugar:
     def __init__(self, id, nombre, lat, lon, precio, calificacion, tiempo_estadia):
         self.id = id
@@ -170,7 +166,6 @@ class Lugar:
         self.calificacion = calificacion
         self.tiempo_estadia = tiempo_estadia
 
-# Clase para el grafo ponderado
 class Grafo:
     def __init__(self):
         self.vertices = []
@@ -189,8 +184,6 @@ class Grafo:
         a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
         return R * c  # distancia en km
-
-# ========== ALGORITMO DE RUTA RECOMENDADA ==========
 
 def construir_grafo(lugares):
     grafo = Grafo()
@@ -245,8 +238,6 @@ def mostrar_en_mapa(origen_coord, lugares):
     puntos = [origen_coord] + [(l.lat, l.lon) for l in lugares]
     folium.PolyLine(puntos, color="red", weight=2.5).add_to(mapa)
     mapa.save("static/ruta_recomendada.html")
-
-# ========== CONVERSIÓN DESDE ÁRBOL B ==========
 
 def convertir_arbol_a_lugares(arbol_turisticos):
     lugares = []

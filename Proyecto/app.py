@@ -21,15 +21,11 @@ def procesar():
     lon = float(request.form['lon'])
     presupuesto = float(request.form['presupuesto'])
 
-    #ruta = recomendar_ruta(grafo, (lat, lon), presupuesto)
     ruta, tiempos_traslado = recomendar_ruta(grafo, (lat, lon), presupuesto)
     mostrar_en_mapa((lat, lon), ruta)
 
-    #Exportar CSV
     exportar_ruta_csv(ruta, tiempos_traslado, ruta_archivo="static/ruta_recomendada.csv")
 
-    #return render_template('index.html', ruta_generada=True)
-    #return render_template('index.html', ruta_generada=True, ruta=ruta)
     return render_template('index.html', ruta_generada=True, ruta=ruta, tiempos_traslado=tiempos_traslado)
 
 
@@ -41,19 +37,15 @@ def cargar_csv():
     if archivo.filename.endswith(".csv"):
         ruta = os.path.join(UPLOAD_FOLDER, archivo.filename)
         archivo.save(ruta)
-
-        # Cargar nuevos datos en árboles temporales
+        
         nuevos_hospedajes, nuevos_turisticos = cargar_datos_desde_csv(ruta)
 
-        # Insertar claves desde los árboles temporales en los árboles principales
         insertar_claves(nuevos_hospedajes.raiz, arbol_hospedajes)
         insertar_claves(nuevos_turisticos.raiz, arbol_turisticos)
 
-        # Exportar visualizaciones (opcional)
         arbol_turisticos.exportar_graphviz().render("Turistico", format="jpg", cleanup=True)
         arbol_hospedajes.exportar_graphviz().render("Hospedaje", format="jpg", cleanup=True)
 
-        # Actualizar grafo y lugares
         lugares_turisticos = convertir_arbol_a_lugares(arbol_turisticos)
         grafo = construir_grafo(lugares_turisticos)
 
@@ -90,7 +82,6 @@ def agregar_manual():
         grafo.agregar_vertice(lugar_convertido)
 
     return render_template("index.html", mensaje="Elemento agregado correctamente.", ruta_generada=False)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

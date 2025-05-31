@@ -1,5 +1,19 @@
 Integrantes
 Andersson Steve Godoy Morales 9490-22-5303                Participación 100%
-
+Implementaicón:
+Arbol B para Hospedajes y Lugares Turisticos
+Elementos que llevara cada clave
+Grafos
 
 Angel Roberto Agustin de León Hernández 9490-21-7527      Participación 100%
+Implementacion:
+Frond End y prosesacmiento de datos.
+Exportar Las rutas generadas
+Mostrar en el mapa las rutas
+
+
+Proyecto de implementacion de Arbol B, para sistema de Recomendacion de rutas para Lugares turisticos,
+donde se podra importar informacion de Hospedajes y Lugares Turisticos desde un archivo CSV separado por comas,
+tambien se podra agregar manual mente hospedajes y lugares turisticas por el usuario, tambien poder exportar
+las recomendaciones en formato CSV.
+
